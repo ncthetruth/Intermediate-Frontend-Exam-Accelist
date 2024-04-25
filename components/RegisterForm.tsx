@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import PopupContent from './PopupContent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link'; // Import the Link component
 
 interface RegisterFormProps {
   onRegisterError: (errorMessage: string) => void;
@@ -144,7 +145,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onRegisterError }) => {
           </Button>
         </Form.Item>
         <p className="text-sm font-light text-gray-800 dark:text-gray-600">Already have an account? 
-        <a href="/login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a></p>
+        <Link href="/login"><a className="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a></Link></p>
 
       </Form>
 
