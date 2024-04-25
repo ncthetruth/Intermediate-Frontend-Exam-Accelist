@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   show: boolean;
   message?: string;
-  warningMessage?: string;
+  warningMessage?: React.ReactNode; // Change the type to accept JSX elements as well
   onClose: () => void;
 }
 
@@ -16,7 +16,7 @@ const PopupContent: React.FC<Props> = ({ show, message, warningMessage, onClose 
       <div className="bg-white p-8 rounded-lg shadow-lg z-10">
         <div className="text-center mb-4">
           {warningMessage ? (
-            <h2 className="text-3xl font-bold text-yellow-600">{warningMessage}</h2>
+            <div className="text-yellow-600">{warningMessage}</div>
           ) : (
             <h2 className="text-3xl font-bold text-red-600">{message}</h2>
           )}
